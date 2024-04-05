@@ -135,4 +135,13 @@ section{
     font-size: var(--p-font);
     text-transform: uppercase;
     transition: all .50s ease;
+    border-radius: 10px;
+}
+
+.btn i{
+    margin-right: 7px;
+}
+
+.btn:hover{
+    background: var(--main-color);
 }
