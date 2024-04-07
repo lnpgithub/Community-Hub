@@ -9,84 +9,181 @@
         <title>Community Hub </title>
         <link rel="icon" type="image/x-icon" href="logo.png">
         <script src="https://kit.fontawesome.com/072e49bb1a.js" crossorigin="anonymous"></script>
-        <style>
+
+        <head>
+            <meta charset="utf-8">
+            <meta name ="viewport" content="width=device-width, initial-scale=1">
+            <title>Hackathon Project</title>
+            <link rel="stylesheet" type="text/css" href ="css/style.css">
         
-        body{
-                background-color: black;
-            }
-      
-        header {
-            background-color: rgb(61, 124, 218);
-            color: rgb(61, 124, 218);
-            height: 70px;
-            padding: 10px 0;
-            text-align: center;
-            border-radius: 20px;
-        }
+            <!--- box icons link --->
+            <link rel="stylesheet"
+            href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        
+            <!--- remix icons link --->
+            <link
+            href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+            rel="stylesheet"/>
+    
+            <!--- google fonts link --->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        </head>
 
-       
-        nav a {
-            color: rgb(255, 255, 255);
-            text-decoration: none;
-            padding: 0 200px;
-        }
 
-        .btn {
-            background-color: rgb(61, 124, 218); 
-            border: none; 
-            color: white; 
-            padding: 27px 100px; 
-            font-size: 16px;
-            cursor: pointer;
-            }
 
-            .rectangle {
-            background-color: rgb(80, 190, 233);
-            padding: 200px; 
-            text-align: center;
-            color: white;
-            font-size: 2cm;
-            font-family: Helvetica;
-            margin: 20px auto; 
-            border-radius: 20px; 
-            }
-            .rectangle2 {
-            background-color: rgb(24, 136, 93);
-            padding: 20px; 
-            font-size: large;
-            text-align: center;
-            color: white;
-            font-family: Helvetica;
-            margin: 20px auto; 
-            border-radius: 20px; 
-            }
 
-        </style>
+
+
+
+
+
+
+
     </head>
 
-    <body>
+
+
+    <header>
+        <a href = "#" class="logo">ComHub</a>
+
+        <ul class="navlist">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Pages</a></li>
+            <li><a href="#">Marketplace</a></li>
+            <li><a href="posts.html">Posts</a></li>
+            <li><a href="#">Chatbot</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <a href="#"><i class="ri-user-line"></i></a>
+            <a href="#"><i class="ri-heart-2-line"></i></a>
+            <a href="#"><i class="ri-shopping-cart-fill"></i></a>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+    </header>
         
 
-        <header>
-            
-            <a href=main.html ><button class="btn"><i class="fa-solid fa-house fa-2xl" style="color: #fafafa;"></i></button></a>
-            <a href=market.html ><button class="btn"><i class="fa-solid fa-dollar-sign fa-2xl" style="color: #ffffff;"></i></button></a>
-            <a href=posts.html ><button class="btn"><i class="fa-solid fa-user-group fa-2xl" style="color: #ffffff;"></i></button></a>
-            <a href=chatbot.html ><button class="btn"><i class="fa-solid fa-robot fa-2xl" style="color: #ffffff;"></i></button></a>
-
-            
-        </header>
+    <br> <br>
         
-        <div class= "rectangle2">
-            <h1>Posts</h1>
+        <div class="recentposts">
+            <h1>Recent Posts</h1>
         </div>
 
+        <div class="addnew">
+            <button type="submit" class="plusbtn" onclick="openPopup()"> <i class="fa-solid fa-plus fa-4x" style="color: #ffffff;"></i></i></button>
+            <div class="popup" id="popup">
+                <button id="cancel" type="submit" class="postcancel" onclick="closePopup()">x </button>
+                <h2>New Post</h2>
+                <textarea id="textarea1" placeholder="Enter Text" required></textarea>
+                <br> <br>
+                <button id="popup_post" type="submit" class="popup_post" onclick="closePopup();fun1()"> Post</button>
+                
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+        <h2 class="postrectangle" id="output1"> </h2>
+        <br>
+        <h2 class="postrectangle" id="output2"> </h2>
+        <br>
+        <h2 class="postrectangle" id="output3"> </h2>
+        <br>
+        <h2 class="postrectangle" id="output4"> </h2>
+        <br>
+        <h2 class="postrectangle" id="output5"> </h2>
+
+
+        <script>
+            
+            
+        </script>
         
+        <script>
+            let txt1 = document.getElementById("textarea1");
+
+            let out1 = document.getElementById("output1");
+            let out2 = document.getElementById("output2");
+            let out3 = document.getElementById("output3");
+            let out4 = document.getElementById("output4");
+            let out5 = document.getElementById("output5");
+
+            function fun1() {
+                out5.innerHTML = out4.innerHTML;
+                out4.innerHTML = out3.innerHTML;
+                out3.innerHTML = out2.innerHTML;
+                out2.innerHTML = out1.innerHTML;
+            
+                out1.innerHTML = txt1.value;
+
+                if(document.getElementById("output1").textContent.trim() !== "")
+                {
+                    document.getElementById("output1").style.visibility = "visible";
+                }
+                else
+                {
+                    document.getElementById("output1").style.visibility = "hidden";
+                }
+                if(document.getElementById("output2").textContent.trim() !== "")
+                {
+                    document.getElementById("output2").style.visibility = "visible";
+                }
+                else
+                {
+                    document.getElementById("output2").style.visibility = "hidden";
+                }
+                if(document.getElementById("output3").textContent.trim() !== "")
+                {
+                    document.getElementById("output3").style.visibility = "visible";
+                }
+                else
+                {
+                    document.getElementById("output3").style.visibility = "hidden";
+                }
+                if(document.getElementById("output4").textContent.trim() !== "")
+                {
+                    document.getElementById("output4").style.visibility = "visible";
+                }
+                else
+                {
+                    document.getElementById("output4").style.visibility = "hidden";
+                }
+                if(document.getElementById("output5").textContent.trim() !== "")
+                {
+                    document.getElementById("output5").style.visibility = "visible";
+                }
+                else
+                {
+                    document.getElementById("output5").style.visibility = "hidden";
+                }
+            }
+        </script>
+
+        <script>
+            let popup = document.getElementById("popup");
+            
+            function openPopup(){
+                popup.classList.add("open-popup");
+            }
+            function closePopup(){
+                popup.classList.remove("open-popup");
+            }
+
+            const textarea = document.querySelector("textarea");
+            textarea.addEventListener("keyup", e =>{
+                textarea.style.height = "63px";
+                let scHeight = e.target.scrollHeight;
+                textarea.style.height = `${scHeight}px`;
+            });
+
         
-    
+        </script>
     </body>
-        
-
-
-
-</html>
