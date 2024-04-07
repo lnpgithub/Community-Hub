@@ -145,3 +145,92 @@ section{
 .btn:hover{
     background: var(--main-color);
 }
+
+header.sticky{
+    background: var(--bg-color);
+    padding: 13px 12%;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+.goods-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    align-items: center;
+    gap: 1.7rem;
+    text-align: center;
+}
+
+.goods{
+    padding: 90px 12% 20px;
+}
+
+.goods-box img{
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.goods-box h6{
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--main-color);
+}
+
+.goods-box h3{
+    margin: 8px 0px;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.goods-btn{
+    display: inline-block;
+    font-size: var(--p-font);
+    color: var(--text-color);
+    border-bottom: 1px solid var(--text-color);
+}
+
+.goods-box{
+    transition: all .50s ease;
+}
+
+.goods-box:hover{
+    transform: translateY(-8px);
+    cursor: pointer;
+}
+
+.center-in{
+    text-align: center;
+}
+
+.center-in h2{
+    font-size: var(--h2-font);
+    margin: 10px 0;
+}
+
+.center-in p{
+    font-size: var(--p-font);
+    color: var(--second-color);
+}
+
+.new-products-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    align-items: center;
+    gap: 1.7rem;
+    margin-top: 5rem;
+}
+
+.row-img{
+    overflow: hidden;
+}
+
+.row-img img{
+    display: block;
+    width: 100%;
+    transition: transform 0.6;
+    cursor: pointer;
+}
+
+.row-img img:hover{
+    transform: scale(1.1);
+}
